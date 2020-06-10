@@ -1,0 +1,380 @@
+<!--- start of script !--->
+<HTML>
+ <head>
+  <meta charset="UTF-16"> <!-- A little overkill, but it works !-->
+</head> 
+<style>
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+#Green {
+	color: green;
+}
+#Red {
+	color: red;
+}
+</style>
+<head>
+	<link rel="stylesheet" type="text/css" href="stylesheets (editor)/2DStart_Style_StickySideBarVersion1.01.css"> <!-- The stylesheet for the sidebar !-->
+	<link rel="stylesheet" type="text/css" href="stylesheets (editor)/TOP_NAVIGATION_BAR_V1.0.css"> <!-- The stylesheet for the top navigation pane !-->
+	<link rel="stylesheet" type="text/css" href="stylesheets (editor)/2DStart_StyleSheet.css"> <!-- The stylesheet for the top navigation pane !-->
+</head>
+<HEAD>
+<TITLE>SNU Blog Editor</TITLE>
+</HEAD>
+<BODY BGCOLOR="ADD8E6">
+ <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  You are working offline. Your work is currently saved to your hard drive. Once you come back online, you will get the option to work on it with the online editor again, and use features such as sharing
+</div> 
+<!-- Sidebar !-->
+<ul>
+	<img src="BlogEditorIcon.png" alt="Logo" width="230" height="220">
+	<li><a class="active" href="#home"> SNU Blog Editor - Untitled1</a></li>
+	<HR>
+	<li><a href="About:blank">About:blank</a></li>
+	<HR>
+	<li><H6><b>|-- Copyleft Sean Walla Walla 2015-2019 --|</b></H6></li>
+	<HR>
+</ul>
+<!-- end of sidebar !-->
+<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+<!--
+<HR>
+!-->
+<!-- broken 
+<ul2>
+  <li2><a href="#LANGSEL">Select Language</a></li>
+  <li2><a href="#HL">Hyperlink library</a></li>
+  <li2 class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">File</a>
+    <div class="dropdown-content">
+      <a href="#">Save as</a>
+      <a href="#">Save</a>
+      <a href="#">Close file pane</a>
+    </div>
+  </li2>
+</ul2>
+!-->
+<script>
+var input = document.getElementById("myInput");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+});
+</script>
+ <div class="topnav">
+  <a class="active" href="#home">(:LOGO:)</a>
+  <a href="#Saved">Save</a>
+  <a href="#Export">Export</a>
+  <a href="#Share">Share</a>
+  <a href="#Offline">Work offline</a>
+  <a href="#Help(Main)">Help</a>
+</div> 
+<HR>
+<!-- Remove this comment, and the 5 lines after it to remove the message of authentication if it is bugging you (only works on current session) !-->
+<H3>Message of authentication</H3>
+<H4>You are using the genuine supported version of the SNU blog editor. If you notice someone doesn't have this message, and they are not using it for historical purposes, feel free to remind them to not use the obsolete staff version</H4>
+<H4>Also, make sure they aren't editing the page before asking them this, as they could have deleted this part on purpose or by accident.</H4>
+<p>Note: deleting this section won't cause issues or effect this webpage (press F12 (or Function + F12) and delete the contents between the 2 comments to remove this section)</p>
+<!-- Remove this comment, and the 5 lines above it to remove the message of authentication if it is bugging you (only works on current session) !-->
+<HR>
+ <form action="/action_page.php">
+  Blog:<br>
+  <input type="text" name="firstname" value="Untitled"><br>
+   <input type="submit" value="Submit">
+</form> 
+<HR>
+<p>Formatting and font style</p>
+ <select name="HEADINGS" size="7" multiple>
+  <option value="LIS" disabled>This is a list of the supported heading styles</option> <!-- Embedded Info part 1 !-->
+  <HR>
+  <option value="H1"><H1>Heading 1</H1></option> <!-- 1 !-->
+  <option value="H2"><H2>Heading 2</H2></option> <!-- 2 !-->
+  <option value="H3"><H3>Heading 3</H3></option> <!-- 3 !-->
+  <option value="H4"><H4>Heading 4</H4></option> <!-- 4 !-->
+  <option value="H5"><H5>Heading 5</H5></option> <!-- 5 !-->
+  <option value="H6"><H6>Heading 6</H6></option> <!-- 6 !-->
+  <HR>
+</select>  
+ <select name="RICH_TEXT_STYLES" size="7" multiple>
+  <option value="LIS" disabled>This is a list of the supported rich text styles</option> <!-- Embedded Info part 1 !-->
+  <HR>
+  <option value="I"><i>Italics</i></option> <!-- 1 !-->
+  <option value="B"><b>Bold</b></option> <!-- 2 !-->
+  <option value="U"><u>Underline</u></option> <!-- 3 !-->
+  <option value="S"><s>Strikethrough</s></option> <!-- 4 !-->
+  <option value="SUB"><sub>Subscript</sub></option> <!-- 5 !-->
+  <option value="SUP"><sup>Superscript</sup></option> <!-- 6 !-->
+  <HR>
+</select>  
+ <select name="Font" size="7" multiple>
+  <option value="volvo" checked>Calibri (body)</option>
+  <option value="volvo" checked>Calibri (light)</option>
+  <option value="volvo" checked>Courier New</option>
+  <option value="saab" disabled>Comic Sans MS</option>
+  <option value="fiat" disabled>Calibri (body)</option>
+  <option value="audi" disabled>Sans Serif</option>
+  <option value="lib" disabled>Liberation Serif</option>
+  <!-- At the moment, no fonts are implemented. If you are using Firefox, Courier New is the default font, if else, this is a placebo and showing the fonts I hope to add in the future !-->
+</select> 
+<HR>
+<p>Font size</p>
+<form action="/action_page.php">
+  Font size (between 1 and 150): <input type="number" name="quantity" min="1" max="150" value="12">
+  <input type="submit">
+</form>
+<HR>
+<p>Greentext</p>
+ <form>
+  <input type="radio" name="GTXT" value="no" checked> Disable
+  <input type="radio" name="GTXT" value="yes"> Enable<br>
+</form> 
+<HR>
+<p>Upload images</p>
+<!--
+ <input list="imageFileTypes">
+<datalist id="imageFileTypes">
+  <option value="PNG">
+  <option value="PNS">
+  <option value="PSD">
+  <option value="JIF">
+  <option value="JPG">
+  <option value="JFIF">
+  <option value="JPEG">
+  <option value="JPE">
+  <option value="TIF"> 
+  <option value="TIFF"> 
+  <option value="BMP">
+  <option value="DIP">
+  <option value="WIM">
+  <option value="HEIF">
+  <option value="WEBP">
+  <option value="GIF">
+  <option value="GIF_C200">  
+</datalist>
+This didn't work as intended
+!-->
+<!-- <p>Supported formats (17)</p> !-->
+ <select name="cars" size="7" multiple>
+  <option value="LIS" disabled>This is a list of the supported image file formats for SNU blogs</option> <!-- Embedded Info part 1 !-->
+  <option value="LIS" disabled>In total, there are 17 different image formats that are supported</option> <!-- Embedded Info part 2 !-->
+  <HR>
+  <option value="PNG">PNG</option> <!-- 1 !-->
+  <option value="PNS">PNS</option> <!-- 2 !-->
+  <option value="PSD">PSD</option> <!-- 3 !-->
+  <option value="JIF">JIF</option> <!-- 4 !-->
+  <option value="JPG">JPG</option> <!-- 5 !-->
+  <option value="JFIF">JFIF</option> <!-- 6 !-->
+  <option value="JPEG">JPEG</option> <!-- 7 !-->
+  <option value="JPE">JPE</option> <!-- 8 !-->
+  <option value="TIF">TIF</option> <!-- 9 !-->
+  <option value="TIFF">TIFF</option> <!-- 10 !-->
+  <option value="BMP">BMP</option> <!-- 11 !-->
+  <option value="DIB">DIB</option> <!-- 12 !-->
+  <option value="WIM">WIM</option> <!-- 13 !-->
+  <option value="HEIF">HEIF</option> <!-- 14 !-->
+  <option value="WEBP">WEBP</option> <!-- 15 !-->
+  <option value="GIF">GIF</option> <!-- 16 !-->
+  <option value="GIF_C200">GIF_C200</option>  <!-- 17 !-->
+  <HR>
+</select>  
+<form action="/action_page.php">
+  📎 Select images: <input type="file" name="img" multiple>
+  <input type="submit">
+</form>
+<HR>
+<button>🔗 Insert hyperlink 🔗</button>
+<HR>
+<!-- hidden from view 
+<details>
+	<summary>View older versions of this page</summary>
+	<p><a href="SNU_BLOG_EDITOR_Snapshot1.html">Snapshot 1</a></p>
+	<p><a href="SNU_BLOG_EDITOR_Snapshot2.html">Snapshot 2</a></p>
+	<p><a href="SNU_BLOG_EDITOR_Snapshot3.html">Snapshot 3</a></p>
+	<p><a href="SNU_BLOG_EDITOR_Snapshot4.html">Snapshot 4</a></p>
+	<p><a href="SNU_BLOG_EDITOR_Snapshot5.html">Snapshot 5</a></p>
+	<p><a href="SNU_BLOG_EDITOR_Snapshot6.html">Snapshot 6</a></p>
+	<p><a href="SNU_BLOG_EDITOR_Snapshot7.html">Snapshot 7</a></p>
+	<p><a href="SNU_BLOG_EDITOR_Snapshot8.html">Snapshot 8</a></p>
+	<p><a href="SNU_BLOG_EDITOR_Snapshot9.html">Snapshot 9</a></p>
+	<p><a href="SNU_BLOG_EDITOR_Snapshot10.html">Snapshot 10</a></p>
+</details>
+!-->
+<form>
+ <textarea rows="8" cols="165">
+ [ Blog title ]
+ 
+ Write something here...
+</textarea>
+<HR>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1 id="Export">Export as</H1>
+ <select name="DOCEX" size="7" multiple>
+  <HR>
+  <option value="PDF">PDF</option> <!-- 1 !-->
+  <option value="XPS">XPS</option> <!-- 2 !-->
+  <option value="ODT">ODT</option> <!-- 3 !-->
+  <option value="RTF">RTF</option> <!-- 4 !-->
+  <option value="DOC">DOC</option> <!-- 5 !-->
+  <option value="DOCX">DOCX</option> <!-- 6 !-->
+  <option value="EPUB">EPUB</option> <!-- 7 !-->
+  <option value="TXT">TXT</option> <!-- 8 !-->  
+  <option value="XML">XML</option> <!-- 9 !--> 
+  <option value="UOF">UOF</option> <!-- 10 !-->  
+  <option value="UOT">UOT</option> <!-- 11 !-->  
+  </select>  
+</form>
+<HR>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1 id="Help(Main)">Help center</H1>
+<H2>Topics</H2>
+<HR>
+<p><a href="#Help_Doesn't_Submit">Why won't it submit</a></p>
+<HR>
+<p><a href="#Help_Define_Greentext">What is greentext?</a></p>
+<HR>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<HR>
+<H1 id="Help_Doesn't_Submit">Why can't I submit my blog?</H1>
+<p>At the moment, the SNU servers aren't live. You are using a beta build that also doesn't support publishing blogs. Try using a more modern build</p>
+<HR>
+<H1 id="Help_Define_Greentext">What is greentext?</H1>
+<p>The greentext feature for the blog editor came from 4chan's greentexting system</p>
+<p>Example:
+<div> <!-- I want this section to be a light brown in the future !-->
+<p id="Green">> This arrow means greentext</p>
+<p id="Red">< This arrows means redtext</p>
+<p id="Green">> This is also known as a greentext story</p>
+</div>
+<HR>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+<H1>-</H1>
+
+<H1 id="Share">Sharing settings</H1>
+<p>Please check these first</p>
+<button>Check for plagiarism</button>
+<button>Check age rating</button>
+<button>Check spelling</button>
+<p>Note: spellcheck is optional ONLY when you are purposefully trying to spell wrong, and it goes with a theme</p>
+<HR>
+<p>Sharing settings</p>
+ <form>
+  <input type="radio" name="GTXT" value="NUL"> Share to followers only<br>
+  <input type="radio" name="GTXT" value="NUL"> Share to subscribers only<br>
+  <input type="radio" name="GTXT" value="NUL"> Share to both followers and subscribers only<br>
+  <input type="radio" name="GTXT" value="NUL"> Share in your region<br>
+  <input type="radio" name="GTXT" value="NUL"> Share worldwide<br>
+  <input type="radio" name="GTXT" value="NUL"> Make private<br>
+  <input type="radio" name="GTXT" value="NUL"> Link only<br>
+  <input type="radio" name="GTXT" value="NUL"> Protected link only<br>
+</form> 
+<HR>
+<p>Verification</p>
+<form>
+	<input type="checkbox" name="VER" value="NUL" disabled>Plagiarism check</br>
+	<input type="checkbox" name="VER" value="NUL" disabled>Rating check</br>
+	<input type="checkbox" name="VER" value="NUL" disabled>Sharing settings set up</br>
+</form>
+<HR>
+<p>When you are ready:</p>
+<button>Share my blog</button>
+<HR>
+</BODY>
+</HTML>
+<!--- end of script !---
+<!-- Snapshot 3 was a forced update, since I don't want people using the one in templateaccountblogs personally, as it would be a waste, but I also can't remove it from templateaccountblogs, because it would make older versions of the blog more broken, I can't have missing features there !-->
+<!-- Snapshot 4
+update to blogs:
+hyperlink options
+image options
+no video option, BUT there WILL be a GIF option 
+!-->
+<!-- snapshot 5
+add in a working set like this eventually
+ <select name="file_options" size="10" multiple>
+  <option value="F">Joint Photographic Exports Group file (.jpg .jpe .jfif .jif .jpeg)</option>
+  <option value="F">Portable Network Graphics file (.png, .pns)</option>
+  <option value="F">PhotoShop image file (.psd)</option>
+  <option value="F">Graphics Interchange Format file (.gif .gif_c200)</option>
+  <option value="F">Bitmap file (.bmp .dib)</option>
+  <option value="F">Tagged Image File (.tif .tiff)</option>
+  <option value="F">High Efficiency Image Format (.heif)</option>
+  <option value="F">Weppy (.WebP)</option>
+  <option value="F">Windows Imaging Format file (.Wim)</option>
+  <option value="F">Scalable Vector Graphics file (.svg)</option>
+  <option value="F">Any of selected (.jpg .jpe .jfif .jif .jpeg .png .pns .psd .gif .gif_c200 .bmp .dib.tif .tiff .heif .webp .wim .svg)</option>
+</select> 
+!--> 
+<!-- snapshot 6
+Export and save feature added, calling it good for now
+!-->
+<!-- snapshot 7
+Minor update:
+more export format options
+more buttons 
+better organization
+Added an image for the sidebar (finally)
+added a basic help guide 
+added a sharing settings area 
+added an offline alert message (eventually will be button activated)
+!-->
+<!-- snapshot 8
+Coming soon!
+!-->
